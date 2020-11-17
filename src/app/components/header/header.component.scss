@@ -1,0 +1,35 @@
+@import 'src/mixins/variables.scss';
+@import 'src/mixins/mixin.scss';
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: $header-background;
+  box-shadow: 0 1px 12px 0 $header-shadow;
+
+  .robosoft_logo_horizontal {
+    justify-content: flex-start;
+    padding: 23px 0px;
+  }
+
+  .login-information {
+    justify-content: flex-end;
+    padding: 0px;
+
+    .user-name {
+      margin-right: 10px;
+      text-transform: capitalize;
+      opacity: 0.87;
+      font-family: Roboto, sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.15px;
+    }
+
+    .oval {
+      height: 44px;
+      width: 44px;
+      border-radius: 50%;
+      border: 2px solid #D92756;
+    }
+  }
+}
