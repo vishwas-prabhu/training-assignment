@@ -1,0 +1,60 @@
+@import './variables.scss';
+
+@mixin display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mat-input-style {
+  ::ng-deep {
+
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      color: $labelColor;
+    }
+
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+      color:$labelColor;
+    }
+  }
+
+  mat-label {
+    color: $labelColor;
+  }
+}
+
+@mixin login-container-style {
+  height: 100vh;
+  background: $loginPageBackground;
+  @include display-center;
+
+  .bg {
+    min-height: 385px;
+    width: 100%;
+    border-radius: 20px;
+    background: $white-background;
+    text-align: center;
+
+    .title {
+      padding-top: 3rem;
+      margin-bottom: 30px;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    @include mat-input-style;
+
+    button {
+        width: 150px;
+        height: 50px;
+        color: white;
+        background: #D92756;
+        font-size: 1rem;
+        letter-spacing: 1.3px;
+        border: none;
+        outline: none;
+        font-weight: 500;
+        border-radius: 25px;
+    }
+  }
+}
