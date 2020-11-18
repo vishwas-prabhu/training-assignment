@@ -1,19 +1,33 @@
 <div class="login">
-    
-    <div class="bg">
-        <form action="">
-            <p class="title">Login</p>
-            <div class="input-field">
-                <input id="username" type="text" name="username" required>
-                <label class="label" for="username"> Enter Username</label>
-            </div>
-            <div class="input-field">
-                <input id="password" type="password" name="password" required>
-                <label class="label" for="password"> Enter Password</label>
-            </div>
-            <button type="submit">Login</button>
-        </form>
-        <p class="forgot-password">Forgot Password ?</p>
-    </div>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 offset-md-3 col-md-6">
+                <div class="bg">
+                    <form action="">
+                        <p class="title">Login</p>
+                        <div class="row m-1">
+                            <!-- <input id="username" type="text" name="username" required>
+                            <label class="label" for="username"> Enter Username</label> -->
+                            <mat-form-field class="col-12 offset-md-2 col-md-8" appearance="outline">
+                                <mat-label class="label">Enter Username</mat-label>
+                                <input class="input" matInput placeholder="">
+                            </mat-form-field>
+                        </div>
+                        <div class="row m-1">
+                            <!-- <input id="password" type="password" name="password" required>
+                            <label class="label" for="password"> Enter Password</label> -->
+                            <mat-form-field class="col-12 offset-md-2 col-md-8 " appearance="outline">
+                                <mat-label class="label">Enter Password</mat-label>
+                                <input class="input" matInput  placeholder="">
+                            </mat-form-field>
+                        </div>
+                        <button type="submit">Login</button>
 
+                    </form>
+                    <p class="forgot-password">Forgot Password ?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>

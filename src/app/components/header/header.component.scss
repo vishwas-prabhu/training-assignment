@@ -6,10 +6,16 @@
   height: 100px;
   background-color: $white-background;
   box-shadow: 0 1px 12px 0 $header-shadow;
+  position: relative;
+  overflow: hidden;
 
   .robosoft_logo_horizontal {
     justify-content: flex-start;
     padding: 23px 0px;
+
+    img {
+      width: 100%;
+    }
   }
 
   .login-information {
@@ -20,16 +26,26 @@
       margin-right: 10px;
       text-transform: capitalize;
       opacity: 0.87;
-      font-family: Roboto, sans-serif;
       font-size: 1rem;
       letter-spacing: 0.15px;
     }
 
     .oval {
-      height: 44px;
-      width: 44px;
+      height: 2.75rem;
+      width: 2.75rem;
       border-radius: 50%;
       border: 2px solid #D92756;
     }
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    padding: 0px 10px;
+  }
+
+  .user-name {
+    position: absolute;
+    left: 500px;
   }
 }
