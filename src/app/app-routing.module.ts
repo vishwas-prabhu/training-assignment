@@ -4,7 +4,7 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent, pathMatch: "full"},
+  // {path: '', component: LoginComponent, pathMatch: "full"},
   {path: 'login', component: LoginComponent},
   {path: 'password', component: ChangePasswordComponent}
 ];

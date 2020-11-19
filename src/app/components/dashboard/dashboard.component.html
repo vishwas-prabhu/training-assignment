@@ -1,0 +1,9 @@
+<div class="dashboard mt-3">
+    <p>Your Questionnaires</p>
+    <button  mat-raised-button color="accent">New Questionnaire</button>
+    <div>
+        <mat-nav-list *ngFor="let list of lists">
+            <a mat-list-item class="list-item" (click)="select(list)" >{{list.title | slicePipe }}<img *ngIf="!list.selected" src="../../../assets/ic_arrow_forward.png" class="icon"></a>
+        </mat-nav-list>
+    </div>
+</div>
