@@ -45,5 +45,23 @@ button {
 }
 
 mat-icon {
-  padding-right: 1.5em;
+  padding-right: .25em;
 }
+
+mat-form-field{
+  margin-bottom: 1rem;
+}
+
+.example-right-align {
+  position: relative;
+  .suffix{
+    position: absolute;
+    top: 1rem;
+    right: 0;
+  }
+}
+
+.calender-icon {
+  color: #ff4081;
+}
+

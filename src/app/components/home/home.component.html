@@ -1,14 +1,24 @@
 <div class="home">
-    <div class="container p-0">
-        <div class="row">
-            <div class="col-12 col-md-3">
-                <app-dashboard></app-dashboard>
-            </div>
-            <div class="col-12 col-md-9">
-                <app-details></app-details>
-            </div>
-        </div>
+  <div class="container p-0">
+    <div class="row">
+      <div class="col-sm-12 col-md-4 col-lg-3">
+        <app-dashboard></app-dashboard>
+      </div>
+      <div class="col-sm-12 col-md-8 col-lg-9">
+        <app-details></app-details>
+          <div *ngIf="clicked" class="nav-options">
+            <button routerLink="/password" mat-stroked-button color="accent">Change Password</button>
+            <button mat-stroked-button color="accent">Add / Remove Super Admins</button>
+            <button mat-stroked-button color="accent">Accent</button>
+          </div>
+          <button mat-fab (click)="openDialog()" class="warn" color="warn"
+            aria-label="Example icon button with a home icon">
+            <mat-icon>{{clicked ? 'close' : 'add'}}</mat-icon>
+          </button>
+      </div>
     </div>
+  </div>
 </div>
 
+<div *ngIf="clicked" class="overlay"></div>
 <app-footer></app-footer>
