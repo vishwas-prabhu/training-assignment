@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   login() {
     this.err = this.authService.checkLogin(this.username, this.password);
     if(!this.err) {
-      this.username = '';
       this.password = '';
     }
   }

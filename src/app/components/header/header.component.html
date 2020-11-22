@@ -6,7 +6,7 @@
       </div>
       <div *ngIf="loginStatus()"
         class="col-6 offset-md-6 col-md-3 d-flex align-items-center login-information">
-        <p class="mb-0 user-name">john doe</p>
+        <p class="mb-0 user-name">{{authService.username}}</p>
         <img class="oval" src="../../../assets/VishwasPrabhu_Photo.jpeg" alt="">
       </div>
     </div>

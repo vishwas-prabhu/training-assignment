@@ -8,34 +8,50 @@ import { tap, delay } from 'rxjs/operators';
 export class AuthService {
 
   isLoggedIn: boolean = false;
+  username: string = '';
 
-  // store the URL so we can redirect after logging in
   // localStorage.setItem('user', JSON.stringify({"username": "aa", "password": '12'}));
   
-  redirectUrl: string = '/home';
+  redirectUrl: string;
 
-  constructor() {}
+  constructor() { }
 
-  login(): Observable<boolean> {
-    return of(true).pipe(
-      delay(1000),
-      tap(val => this.isLoggedIn = true)
-    );
-  }
-
-  logout(): void {
-    this.isLoggedIn = false;
-  }
-
-  checkLogin(username, password){
-    const user = JSON.parse(localStorage.getItem('user'));
-    if(username == user.username && password == user.password){
+  isUserLoggedIn(): boolean{
+    this.username = localStorage.getItem('loggedUser');
+    if(this.username){
       this.isLoggedIn = true;
       return true;
     } else {
-      this.isLoggedIn = false;
+    return false;
+    }
+  }
+
+  checkLogin(username: string, password: string): boolean{
+    const users = JSON.parse(localStorage.getItem('users'));
+
+    users.find((item) => {
+      if(item.username === username && item.password === password) {
+        localStorage.setItem('loggedUser', username);
+        this.isLoggedIn = true;
+        return true;
+      }
+    })
+
+    if(!this.isLoggedIn){
       alert('wrong username or password');
       return false;
     }
+  }
+
+  changePassword(newPassword){
+    const users = JSON.parse(localStorage.getItem('users'));
+
+    users.find((item) => {
+      if(item.username === this.username) {
+        item.password = newPassword;
+      }
+    });
+
+    localStorage.setItem('users', JSON.stringify(users));
   }
 }

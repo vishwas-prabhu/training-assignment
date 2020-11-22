@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-change-password',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  constructor() { }
+  reEnterNewPassword: string;
+  newPassword: string;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
+  updatePassword(){
+    if(this.reEnterNewPassword !== this.newPassword){
+      alert('password does not match');
+      this.reEnterNewPassword = '';
+    } else {
+      this.authService.changePassword(this.newPassword);
+    }
+  }
 }
