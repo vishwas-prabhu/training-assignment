@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +22,4 @@ export class HomeComponent implements OnInit {
     // dialogRef.afterClosed().subscribe(() => this.clicked = !this.clicked);
     this.clicked = !this.clicked
   }
-
-
-
 }

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-3">
+    <mat-form-field appearance="outline">
+      <input [(ngModel)]="newAdmin.name" matInput placeholder="Name">
+    </mat-form-field>
+  </div>
+  <div class="col-3">
+    <mat-form-field appearance="outline">
+      <input [(ngModel)]="newAdmin.employeeNumber" matInput placeholder="Emp. No">
+    </mat-form-field>
+  </div>
+  <div class="col-4">
+    <mat-form-field appearance="outline">
+      <input [(ngModel)]="newAdmin.email" matInput placeholder="Email">
+    </mat-form-field>
+  </div>
+  <div class="col-2">
+    <button mat-fab (click)="addNewAdminToAdminList()" color="accent" aria-label="Example icon button with a home icon"
+      disabled={{disableAdd}}>
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>

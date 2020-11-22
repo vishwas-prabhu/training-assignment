@@ -1,3 +1,5 @@
+@import 'src/mixins/variables.scss';
+
 .dashboard {
     background: white;
     padding: 20px;
@@ -35,6 +37,6 @@
 }
 
 .active {
-    background-color: #d927560d;
+    background-color: $dashboardSelectedLinkBackground;
     border-radius: 1.5rem;
 }
