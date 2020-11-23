@@ -24,7 +24,7 @@ export class AdminService {
   constructor() { }
 
   getAdminList(): Observable<any> {
-    return of(this.admins)
+    return of(this.admins);
   }
 
   addNewAdminToAdminList(admin){
