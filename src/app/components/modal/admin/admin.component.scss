@@ -1,3 +1,36 @@
-@import 'src/mixins/modal-styles.scss';
+@import 'src/mixins/mixin.scss';
 
-@include modal-content-style();
+.modal-content {
+  border-radius: 20px;
+  padding: 0px 3rem;
+
+  ::ng-deep {
+    .mat-form-field-wrapper {
+      padding-bottom: 0px;
+    }
+  }
+}
+
+.title {
+  padding-top: 3rem;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.times {
+  @include close-button(-2rem);
+}
+
+mat-form-field {
+  font-size: 1rem;
+  width: 100%;
+}
+
+button {
+  outline: none;
+}
+
+.button {
+  @include custom-button(0.75rem);
+}

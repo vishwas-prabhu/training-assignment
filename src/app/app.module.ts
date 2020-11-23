@@ -23,7 +23,6 @@ import { SlicePipePipe } from './pipes/slice-pipe.pipe';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AdminComponent } from './components/modal/admin/admin.component';
 import { FormsModule } from '@angular/forms';
-import { SuperadminComponent } from './components/modal/superadmin/superadmin.component';
 import { AddAdminComponent } from './components/modal/add-admin/add-admin.component';
 import { CheckEmailComponent } from './components/check-email/check-email.component';
 
@@ -39,7 +38,6 @@ import { CheckEmailComponent } from './components/check-email/check-email.compon
     DetailsComponent,
     SlicePipePipe,
     AdminComponent,
-    SuperadminComponent,
     AddAdminComponent,
     CheckEmailComponent,
   ],

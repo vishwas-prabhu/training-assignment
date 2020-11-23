@@ -8,8 +8,8 @@
         <app-details></app-details>
           <div *ngIf="clicked" class="nav-options">
             <button routerLink="/password" mat-stroked-button color="accent">Change Password</button>
-            <button (click)="clicked = !clicked" data-toggle="modal" data-target="#adminModal" mat-stroked-button color="accent">Add / Remove Admins</button>
-            <button (click)="clicked = !clicked" data-toggle="modal" data-target="#superAdminModal" mat-stroked-button color="accent">Add / Remove Super Admins</button>
+            <button (click)="onClickOpenModal('Admin')" data-toggle="modal" data-target="#adminModal" mat-stroked-button color="accent">Add / Remove Admins</button>
+            <button (click)="onClickOpenModal('Super Admin')" data-toggle="modal" data-target="#adminModal" mat-stroked-button color="accent">Add / Remove Super Admins</button>
           </div>
           <button mat-fab (click)="openDialog()" class="warn" color="warn"
             aria-label="Example icon button with a home icon">
@@ -21,5 +21,4 @@
 </div>
 <div *ngIf="clicked" class="overlay"></div>
 <app-footer></app-footer>
-<app-admin></app-admin>
-<app-superadmin></app-superadmin>
+<app-admin [adminCategory]="adminCategory"></app-admin>

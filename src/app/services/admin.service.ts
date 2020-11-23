@@ -11,13 +11,29 @@ export class AdminService {
       id: 1,
       name: 'Kevin',
       employeeNumber: 'RT02485',
-      email: 'Kevin@robosoftin.com'
+      email: 'Kevin@robosoftin.com',
+      type: 'Admin'
     },
     {
       id: 2,
       name: 'John',
       employeeNumber: 'RT02486',
-      email: 'John.Doe@robosoftin.com'
+      email: 'John.Doe@robosoftin.com',
+      type: 'Admin'
+    },
+    {
+      id: 3,
+      name: 'vishwas',
+      employeeNumber: 'RT02495',
+      email: 'vishwas@robosoftin.com',
+      type: 'Super Admin'
+    },
+    {
+      id: 4,
+      name: 'vishwas2',
+      employeeNumber: 'RT02496',
+      email: 'vishwas2@robosoftin.com',
+      type: 'Super Admin'
     }
   ]
 

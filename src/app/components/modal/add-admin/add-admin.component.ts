@@ -10,6 +10,7 @@ export class AddAdminComponent implements OnInit {
 
   @Input() newAdmin;
   @Input() disableAdd;
+  @Input() adminCategory;
 
   constructor(private admin: AdminService) { }
 
@@ -17,6 +18,7 @@ export class AddAdminComponent implements OnInit {
   }
 
   addNewAdminToAdminList() {
+    this.newAdmin.type = this.adminCategory;
     this.admin.addNewAdminToAdminList({...this.newAdmin})
   }
 

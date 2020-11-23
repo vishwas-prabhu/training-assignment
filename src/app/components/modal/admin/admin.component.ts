@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -8,11 +8,13 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class AdminComponent implements OnInit {
 
+  @Input() adminCategory;
   admins;
   newAdmin;
   disableAdd= false;
 
-  constructor(public adminService: AdminService) { }
+  constructor(public adminService: AdminService) {
+   }
 
   ngOnInit(): void {
     this.adminService.getAdminList().subscribe(res => this.admins = res);
