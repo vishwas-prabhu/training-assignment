@@ -4,7 +4,7 @@
       <div class="col-6 col-md-3 d-flex robosoft_logo_horizontal">
         <img src="../../../assets/Robosoft_logo_horizontal.png" alt="">
       </div>
-      <div *ngIf="loginStatus()"
+      <div *ngIf="authService.isLoggedIn"
         class="col-6 offset-md-6 col-md-3 d-flex align-items-center login-information">
         <p class="mb-0 user-name">{{authService.username}}</p>
         <img class="oval" src="../../../assets/VishwasPrabhu_Photo.jpeg" alt="">

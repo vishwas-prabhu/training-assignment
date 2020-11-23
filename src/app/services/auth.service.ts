@@ -9,49 +9,54 @@ export class AuthService {
 
   isLoggedIn: boolean = false;
   username: string = '';
-
-  // localStorage.setItem('user', JSON.stringify({"username": "aa", "password": '12'}));
-  
   redirectUrl: string;
 
-  constructor() { }
 
-  isUserLoggedIn(): boolean{
+  constructor() {   
+    // localStorage.setItem('users', JSON.stringify([
+    //   {"username": "kevin", "password": "kevin"},
+    //   {"username": "john", "password": "john"},
+    //   {"username": "bob", "password": "bob"}
+    // ]));
+  }
+
+
+  getUsers(): Array<any> {
+    return JSON.parse(localStorage.getItem('users'));
+  }
+
+  isUserLoggedIn(): boolean {
     this.username = localStorage.getItem('loggedUser');
-    if(this.username){
+    if (this.username) {
       this.isLoggedIn = true;
       return true;
     } else {
-    return false;
+      return false;
     }
   }
 
-  checkLogin(username: string, password: string): boolean{
-    const users = JSON.parse(localStorage.getItem('users'));
-
-    users.find((item) => {
-      if(item.username === username && item.password === password) {
+  checkUserCredentials(username: string, password: string): boolean {
+    this.getUsers().find((item) => {
+      if (item.username === username && item.password === password) {
         localStorage.setItem('loggedUser', username);
         this.isLoggedIn = true;
         return true;
       }
     })
 
-    if(!this.isLoggedIn){
+    if (!this.isLoggedIn) {
       alert('wrong username or password');
       return false;
     }
   }
 
-  changePassword(newPassword){
-    const users = JSON.parse(localStorage.getItem('users'));
-
-    users.find((item) => {
-      if(item.username === this.username) {
+  updatePassword(newPassword): void {
+    const USERS = this.getUsers()
+    USERS.find((item) => {
+      if (item.username === this.username) {
         item.password = newPassword;
       }
     });
-
-    localStorage.setItem('users', JSON.stringify(users));
+    localStorage.setItem('users', JSON.stringify(USERS));
   }
 }

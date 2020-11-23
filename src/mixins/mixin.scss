@@ -13,7 +13,7 @@
       color: $labelColor;
     }
 
-    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
       color: $labelColor;
     }
   }
@@ -30,6 +30,18 @@
   right: $right;
   outline: none;
   cursor: default;
+}
+
+@mixin custom-button($fontSize) {
+  width: 150px;
+  height: 50px;
+  color: white;
+  font-size: $fontSize;
+  letter-spacing: 1.3px;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  border-radius: 25px;
 }
 
 @mixin login-container-style {
@@ -54,16 +66,8 @@
     @include mat-input-style;
 
     button {
-      width: 150px;
-      height: 50px;
-      color: white;
+      @include custom-button(1rem);
       background: $buttonBackground;
-      font-size: 1rem;
-      letter-spacing: 1.3px;
-      border: none;
-      outline: none;
-      font-weight: 500;
-      border-radius: 25px;
     }
   }
 }

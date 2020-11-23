@@ -10,16 +10,16 @@ export class LoginComponent implements OnInit {
 
   username: string;
   password: string;
-  err: boolean = false;
+  error: boolean = false;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  login() {
-    this.err = this.authService.checkLogin(this.username, this.password);
-    if(!this.err) {
+  onClicklogin() {
+    this.error = this.authService.checkUserCredentials(this.username, this.password);
+    if(!this.error) {
       this.password = '';
     }
   }

@@ -9,20 +9,25 @@ import { AdminService } from 'src/app/services/admin.service';
 export class AdminComponent implements OnInit {
 
   admins;
+  newAdmin;
+  disableAdd= false;
 
-  constructor(public admin: AdminService) { }
+  constructor(public adminService: AdminService) { }
 
   ngOnInit(): void {
-    this.admin.getAdminList().subscribe(res => this.admins = res);
+    this.adminService.getAdminList().subscribe(res => this.admins = res);
+    this.resetNewAdmin();
   }
 
-  newAdmin = {
-    name: '',
-    employeeNumber: '',
-    email: ''
+  resetNewAdmin(){
+    this.newAdmin = {
+      id: null,
+      name: '',
+      employeeNumber: '',
+      email: ''
+    }
+    this.disableAdd= false;
   }
-
-  disableAdd= false;
 
   editDetailsOfAdmin(admin){
     this.admins.find((item) => {
@@ -30,10 +35,15 @@ export class AdminComponent implements OnInit {
         this.newAdmin = admin;
         this.disableAdd = true;
       }
-    })
+    });
+  }
+
+  onClickUpdateAdmin(){
+    this.adminService.updateAdmin({...this.newAdmin})
+    this.resetNewAdmin();
   }
 
   deleteAdmin(id){
-    this.admin.deleteAdmin(id);
+    this.adminService.deleteAdmin(id);
   }
 }

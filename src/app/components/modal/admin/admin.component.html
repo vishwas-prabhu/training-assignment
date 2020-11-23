@@ -8,8 +8,6 @@
         </p>
         
         <app-add-admin [newAdmin]="newAdmin" [disableAdd]="disableAdd"></app-add-admin>
-
-        <hr>
         
         <div class="row" *ngFor="let admin of admins">
           <div class="col-md-6 col-lg-3">
@@ -27,14 +25,15 @@
               <input matInput value="{{admin.email}}">
             </mat-form-field>
           </div>
-          <div class="col-md-6 col-lg-2">
+          <div class="col-md-3 col-lg-1">
             <button mat-fab (click)="editDetailsOfAdmin(admin)" class="pl-0 mr-1" color="accent"
-              aria-label="Example icon button with a home icon">
+              aria-label="">
               <mat-icon>edit</mat-icon>
             </button>
-
-            <button mat-fab (click)="deleteAdmin(admin.employeeNumber)" color="accent"
-              aria-label="Example icon button with a home icon">
+          </div>
+          <div class="col-md-3 col-lg-1">
+            <button mat-fab (click)="deleteAdmin(admin.id)" color="accent"
+              aria-label="">
               <mat-icon>delete</mat-icon>
             </button>
           </div>
@@ -42,12 +41,12 @@
 
         <div class="row">
           <div class="col-12 col-md-10 mt-4 mb-5 d-flex justify-content-end">
-            <button mat-raised-button color="accent" type="submit" class="button mr-3">Update</button>
-            <button mat-raised-button color="accent" type="submit" class="button">Cancel</button>
+            <button mat-raised-button color="accent" type="submit" (click)="onClickUpdateAdmin()" class="button mr-3">Update</button>
+            <button mat-raised-button color="accent" type="submit" data-dismiss="modal" (click)="resetNewAdmin()" class="button">Cancel</button>
           </div>
         </div>
 
-        <div class="times" data-dismiss="modal">&times;</div>
+        <div class="times" data-dismiss="modal" (click)="resetNewAdmin()">&times;</div>
       </div>
     </div>
   </div>
