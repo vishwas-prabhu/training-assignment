@@ -8,18 +8,27 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  username: string;
-  password: string;
+  username: string = '';
+  password: string = '';
   error: boolean = false;
+  disabledButton: boolean = true;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
+  validate() {
+    if (this.username === '' || this.password.length < 5) {
+      this.disabledButton = true;
+    } else {
+      this.disabledButton = false;
+    }
+  }
+
   onClicklogin() {
     this.error = this.authService.checkUserCredentials(this.username, this.password);
-    if(!this.error) {
+    if (!this.error) {
       this.password = '';
     }
   }
