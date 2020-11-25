@@ -26,7 +26,8 @@ export class AdminComponent implements OnInit {
       id: null,
       name: '',
       employeeNumber: '',
-      email: ''
+      email: '',
+      type: ''
     }
     this.disableAdd= false;
   }

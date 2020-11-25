@@ -18,6 +18,7 @@ export class AddAdminComponent implements OnInit {
   }
 
   addNewAdminToAdminList() {
+    this.newAdmin.id = Math.floor(Math.random() * 10000 + 1);
     this.newAdmin.type = this.adminCategory;
     this.admin.addNewAdminToAdminList({...this.newAdmin})
   }

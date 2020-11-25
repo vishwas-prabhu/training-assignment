@@ -1,5 +1,5 @@
 <div class="home">
-  <div class="container p-0">
+  <div class="container-fluid pad-left pad-right">
     <div class="row">
       <div class="col-sm-12 col-md-4 col-lg-3">
         <app-dashboard></app-dashboard>
@@ -21,4 +21,6 @@
 </div>
 <div *ngIf="clicked" class="overlay"></div>
 <app-footer></app-footer>
+
+<!-- adminModal -->
 <app-admin [adminCategory]="adminCategory"></app-admin>

@@ -46,16 +46,19 @@ button {
   background: $optionsButtonBackground;
 }
 
-.example-right-align {
+.duration-right-align {
   position: relative;
   .suffix{
     position: absolute;
     top: 1rem;
     right: 0;
+    color: $footerTextColor;
   }
 }
 
 .calender-icon {
   color: $accentColor;
+  position: relative;
+  right: -.5rem;
 }
 

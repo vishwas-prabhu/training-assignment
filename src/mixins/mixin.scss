@@ -76,3 +76,34 @@
     }
   }
 }
+
+
+@mixin disabledButton {
+  .disabled {
+    background: $disabledButtonBackground !important;
+  }
+}
+
+
+
+@mixin padding-media-query {
+  @media (min-width: 900px){
+    .pad-left {
+      padding-left: 5rem;
+    }
+
+    .pad-right {
+      padding-right: 5rem;
+    }
+  }
+
+  @media (min-width: 1400px){
+    .pad-left {
+      padding-left: 130px;
+    }
+
+    .pad-right {
+      padding-right: 130px;
+    }
+  }
+}

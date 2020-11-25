@@ -1,16 +1,16 @@
 @import 'src/mixins/mixin.scss';
 
-@include mat-input-style;
-
-mat-form-field {
-  font-size: 1rem;
-  width: 100%;
-}
-
-button {
-  outline: none;
-}
-
 .new-admin {
   border-bottom: 1px dashed gray;
+
+  mat-form-field {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  @include mat-input-style;
+
+  button {
+    outline: none;
+  }
 }
