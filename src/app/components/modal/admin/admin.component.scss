@@ -4,6 +4,8 @@
   border-radius: 20px;
   padding: 0px 3rem;
 
+  @include mat-input-style;
+
   ::ng-deep {
     .mat-form-field-wrapper {
       padding-bottom: 0px;

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { admin } from 'src/app/admin.interface';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -9,9 +10,9 @@ import { AdminService } from 'src/app/services/admin.service';
 export class AdminComponent implements OnInit {
 
   @Input() adminCategory;
-  admins;
-  newAdmin;
-  disableAdd= false;
+  admins: admin[];
+  newAdmin: admin;
+  disableAdd: boolean = false;
 
   constructor(public adminService: AdminService) {
    }
@@ -32,7 +33,7 @@ export class AdminComponent implements OnInit {
     this.disableAdd= false;
   }
 
-  editDetailsOfAdmin(admin){
+  onClickEditDetailsOfAdmin(admin){
     this.admins.find((item) => {
       if(item === admin){
         this.newAdmin = admin;
@@ -46,7 +47,7 @@ export class AdminComponent implements OnInit {
     this.resetNewAdmin();
   }
 
-  deleteAdmin(id){
+  onClickDeleteAdmin(id){
     this.adminService.deleteAdmin(id);
   }
 }

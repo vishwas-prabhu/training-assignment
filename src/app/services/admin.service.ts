@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { admin } from '../admin.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
 
-  admins = [
+  admins: admin[] = [
     {
       id: 1,
       name: 'Kevin',
@@ -39,7 +40,7 @@ export class AdminService {
 
   constructor() { }
 
-  getAdminList(): Observable<any> {
+  getAdminList(): Observable<admin[]> {
     return of(this.admins);
   }
 

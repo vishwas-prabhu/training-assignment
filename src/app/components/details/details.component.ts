@@ -32,7 +32,7 @@ export class DetailsComponent implements OnInit {
     },
     {
       icon: 'article',
-      title: 'GENERATE REPORT',
+      title: `GENERATE REPORT`,
       click: ''
     },
   ]

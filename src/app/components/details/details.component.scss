@@ -22,43 +22,50 @@
     font-size: 1rem;
     margin-bottom: 1rem;
   }
-}
 
-.options {
-  padding-left: 30px;
-  border-left: 2px solid $accentColor;
-}
+  .options {
+    padding-left: 30px;
+    border-left: 2px solid $accentColor;
+  }
 
-.pr-30px {
-  padding-right: 30px;
-}
+  .pr-30px {
+    padding-right: 30px;
+  }
 
-button {
-  width: 100%;
-  text-align: start;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1.25px;
-  line-height: 16px;
-  padding: 12px;
-  margin-bottom: 1.25rem;
-  outline: none;
-  background: $optionsButtonBackground;
-}
+  button {
+    width: 100%;
+    text-align: start;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.25px;
+    line-height: 16px;
+    padding: 12px;
+    margin-bottom: 1.25rem;
+    outline: none;
+    background: $optionsButtonBackground;
+  }
 
-.duration-right-align {
-  position: relative;
-  .suffix{
-    position: absolute;
-    top: 1rem;
-    right: 0;
-    color: $footerTextColor;
+  .duration-right-align {
+    position: relative;
+
+    .suffix {
+      position: absolute;
+      top: 1rem;
+      right: 0;
+      color: $footerTextColor;
+    }
+  }
+
+  .calender-icon {
+    color: $accentColor;
+    position: relative;
+    right: -.5rem;
+  }
+
+  @media (max-width: 991px) {
+    .options {
+      padding-left: 10px;
+      border-left: none;
+    }
   }
 }
-
-.calender-icon {
-  color: $accentColor;
-  position: relative;
-  right: -.5rem;
-}
-

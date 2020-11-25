@@ -3,69 +3,58 @@
     <div class="col-md-12 col-lg-8 pr-30px">
       <div class="questionaire">
         <p class="title">Questionaire</p>
-
         <mat-form-field appearance="outline">
           <mat-label>Enter Title</mat-label>
           <input matInput placeholder="Placeholder" value="Secure Coding Guidelines">
           <mat-hint>Please enter appropriate title</mat-hint>
         </mat-form-field>
-
         <mat-form-field appearance="outline">
           <mat-label>Description</mat-label>
           <textarea rows="3" matInput placeholder=""></textarea>
         </mat-form-field>
-
-
         <mat-form-field class="col-6 pl-0" appearance="outline">
           <mat-label class="label">Button Title</mat-label>
           <input class="input" matInput type="text" placeholder="">
         </mat-form-field>
-
         <mat-form-field class="col-6 pr-0" appearance="outline">
           <mat-label class="label">Button Text</mat-label>
           <input class="input" matInput type="text" placeholder="">
         </mat-form-field>
-
         <mat-form-field appearance="outline">
           <mat-label class="label">Check box text</mat-label>
           <input class="input" matInput type="text" placeholder="">
         </mat-form-field>
       </div>
+
       <div class="additional-details">
         <p class="title">Additional Details</p>
-
         <mat-form-field class="col-4 pl-0 " color="accent" appearance="outline">
           <mat-label>Start date</mat-label>
           <input matInput [matDatepicker]="picker1">
           <mat-datepicker-toggle matSuffix [for]="picker1" class="calender-icon"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
-
         <mat-form-field class="col-4 p-0" color="accent" appearance="outline">
           <mat-label>End date</mat-label>
           <input matInput [matDatepicker]="picker2">
           <mat-datepicker-toggle color="accent" class="calender-icon" matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
-
         <mat-form-field class="col-4 pr-0 duration-right-align" appearance="outline">
           <mat-label>Duration</mat-label>
           <input matInput type="text" value="5">
           <span class="suffix">Days</span>
         </mat-form-field>
-
         <mat-form-field class="col-6 pl-0" appearance="outline">
           <mat-label class="label">Select Content PPT File</mat-label>
           <input class="input" matInput type="text" placeholder="">
           <mat-icon matSuffix color="accent">cloud_upload</mat-icon>
         </mat-form-field>
-
         <mat-form-field class="col-6 pr-0" appearance="outline">
           <mat-label class="label">Select Participant xl sheet</mat-label>
           <input class="input" matInput type="text" placeholder="">
           <mat-icon matSuffix color="accent">cloud_upload</mat-icon>
         </mat-form-field>
-
         <mat-form-field appearance="outline">
           <mat-label>Mail Body</mat-label>
           <textarea rows="3" matInput placeholder=""></textarea>
