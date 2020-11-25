@@ -4,6 +4,10 @@
 .login {
   @include login-container-style;
 
+  input {
+    font-size: 1rem;
+  }
+
   .forgot-password {
     margin-top: 1rem;
     font-size: 0.75rem;

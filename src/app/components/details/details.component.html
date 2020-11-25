@@ -28,16 +28,16 @@
 
       <div class="additional-details">
         <p class="title">Additional Details</p>
-        <mat-form-field class="col-4 pl-0 " color="accent" appearance="outline">
-          <mat-label>Start date</mat-label>
+        <mat-form-field class="col-4 pl-0" appearance="outline">
+          <mat-label>Start Date</mat-label>
           <input matInput [matDatepicker]="picker1">
-          <mat-datepicker-toggle matSuffix [for]="picker1" class="calender-icon"></mat-datepicker-toggle>
+          <mat-datepicker-toggle class="icon cal-icon" matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
-        <mat-form-field class="col-4 p-0" color="accent" appearance="outline">
+        <mat-form-field class="col-4 p-0" appearance="outline">
           <mat-label>End date</mat-label>
           <input matInput [matDatepicker]="picker2">
-          <mat-datepicker-toggle color="accent" class="calender-icon" matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker-toggle class="icon cal-icon" matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
         <mat-form-field class="col-4 pr-0 duration-right-align" appearance="outline">
@@ -47,13 +47,13 @@
         </mat-form-field>
         <mat-form-field class="col-6 pl-0" appearance="outline">
           <mat-label class="label">Select Content PPT File</mat-label>
-          <input class="input" matInput type="text" placeholder="">
-          <mat-icon matSuffix color="accent">cloud_upload</mat-icon>
+          <ngx-mat-file-input [accept]="acceptPptx"></ngx-mat-file-input>
+          <mat-icon matSuffix class="icon">cloud_upload</mat-icon>
         </mat-form-field>
         <mat-form-field class="col-6 pr-0" appearance="outline">
           <mat-label class="label">Select Participant xl sheet</mat-label>
-          <input class="input" matInput type="text" placeholder="">
-          <mat-icon matSuffix color="accent">cloud_upload</mat-icon>
+          <ngx-mat-file-input [accept]="acceptXlsx"></ngx-mat-file-input>
+          <mat-icon matSuffix class="icon">cloud_upload</mat-icon>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Mail Body</mat-label>
@@ -64,7 +64,7 @@
 
     <div class="col-md-12 col-lg-4 pl-0">
       <div class="options" *ngFor="let button of buttons">
-        <button mat-button (click)="button.click(button.title)" color="accent">
+        <button mat-button class="button">
           <mat-icon matIcon>{{button.icon}}</mat-icon> {{button.title}}
         </button>
       </div>

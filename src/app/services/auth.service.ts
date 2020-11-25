@@ -12,11 +12,11 @@ export class AuthService {
   redirectUrl: string;
 
 
-  constructor() {   
+  constructor() {
     // localStorage.setItem('users', JSON.stringify([
     //   {"username": "kevin", "password": "kevin"},
-    //   {"username": "john", "password": "john"},
-    //   {"username": "bob", "password": "bob"}
+    //   {"username": "john", "password": "johnbro"},
+    //   {"username": "bob", "password": "bobbro"}
     // ]));
   }
 

@@ -16,7 +16,8 @@
               <input class="input" (keyup)="validate()" matInput [(ngModel)]="password" type="password" placeholder="">
             </mat-form-field>
           </div>
-          <button (click)="onClicklogin()" [ngClass]="{'disabled': disabledButton}" routerLink="/home" type="submit" [disabled]="disabledButton">Login</button>
+          <button (click)="onClicklogin()" [ngClass]="{'disabled': disabledButton}" routerLink="/home" type="submit"
+            [disabled]="disabledButton">Login</button>
           <p class="forgot-password">Forgot Password ?</p>
         </div>
       </div>

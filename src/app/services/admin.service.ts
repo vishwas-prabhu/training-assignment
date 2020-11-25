@@ -44,13 +44,13 @@ export class AdminService {
     return of(this.admins);
   }
 
-  addNewAdminToAdminList(admin){
+  addNewAdminToAdminList(admin) {
     this.admins.push(admin);
   }
 
-  updateAdmin({id, name, employeeNumber, email}){
+  updateAdmin({ id, name, employeeNumber, email }) {
     this.admins.find((item) => {
-      if(item.id === id){
+      if (item.id === id) {
         item.name = name;
         item.employeeNumber = employeeNumber;
         item.email = email;
@@ -58,9 +58,9 @@ export class AdminService {
     })
   }
 
-  deleteAdmin(id){
+  deleteAdmin(id) {
     this.admins.find((item, index) => {
-      if(item.id === id){
+      if (item.id === id) {
         this.admins.splice(index, 1);
       }
     })

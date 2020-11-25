@@ -15,14 +15,14 @@ export class AdminComponent implements OnInit {
   disableAdd: boolean = false;
 
   constructor(public adminService: AdminService) {
-   }
+  }
 
   ngOnInit(): void {
     this.adminService.getAdminList().subscribe(res => this.admins = res);
     this.resetNewAdmin();
   }
 
-  resetNewAdmin(){
+  resetNewAdmin() {
     this.newAdmin = {
       id: null,
       name: '',
@@ -30,24 +30,24 @@ export class AdminComponent implements OnInit {
       email: '',
       type: ''
     }
-    this.disableAdd= false;
+    this.disableAdd = false;
   }
 
-  onClickEditDetailsOfAdmin(admin){
+  onClickEditDetailsOfAdmin(admin) {
     this.admins.find((item) => {
-      if(item === admin){
+      if (item === admin) {
         this.newAdmin = admin;
         this.disableAdd = true;
       }
     });
   }
 
-  onClickUpdateAdmin(){
-    this.adminService.updateAdmin({...this.newAdmin})
+  onClickUpdateAdmin() {
+    this.adminService.updateAdmin({ ...this.newAdmin })
     this.resetNewAdmin();
   }
 
-  onClickDeleteAdmin(id){
+  onClickDeleteAdmin(id) {
     this.adminService.deleteAdmin(id);
   }
 }

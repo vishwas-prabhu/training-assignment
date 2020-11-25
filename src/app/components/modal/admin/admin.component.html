@@ -25,13 +25,13 @@
                 <input matInput value="{{admin.email}}">
               </mat-form-field>
             </div>
-            <div class="col-md-3 col-lg-1">
-              <button mat-fab (click)="onClickEditDetailsOfAdmin(admin)" class="pl-0" color="accent" aria-label="">
+            <div class="col-md-3 col-lg-1 d-flex align-items-center">
+              <button mat-fab (click)="onClickEditDetailsOfAdmin(admin)" class="pl-0" aria-label="">
                 <mat-icon>edit</mat-icon>
               </button>
             </div>
-            <div class="col-md-3 col-lg-1">
-              <button mat-fab (click)="onClickDeleteAdmin(admin.id)" color="accent" aria-label="">
+            <div class="col-md-3 col-lg-1 d-flex align-items-center">
+              <button mat-fab (click)="onClickDeleteAdmin(admin.id)" aria-label="">
                 <mat-icon>delete</mat-icon>
               </button>
             </div>
@@ -40,9 +40,8 @@
 
         <div class="row mt-3">
           <div class="col-12 col-md-10 mt-4 mb-5 d-flex justify-content-end">
-            <button mat-raised-button color="accent" type="submit" (click)="onClickUpdateAdmin()"
-              class="button mr-3">Update</button>
-            <button mat-raised-button color="accent" type="submit" data-dismiss="modal" (click)="resetNewAdmin()"
+            <button mat-raised-button type="submit" (click)="onClickUpdateAdmin()" class="button mr-3">Update</button>
+            <button mat-raised-button type="submit" data-dismiss="modal" (click)="resetNewAdmin()"
               class="button">Cancel</button>
           </div>
         </div>

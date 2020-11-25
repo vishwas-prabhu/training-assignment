@@ -7,33 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
+  acceptPptx: string = ".pptx";
+  acceptXlsx: string = ".xlsx";
+
   buttons = [
     {
       icon: 'save',
-      title: 'SAVE',
-      click: (msg) => {
-        this.hai(msg);
-      }
+      title: 'SAVE'
     },
     {
       icon: 'preview',
-      title: 'PREVIEW',
-      click: ''
+      title: 'PREVIEW'
     },
     {
       icon: 'publish',
-      title: 'PUBLISH',
-      click: ''
+      title: 'PUBLISH'
     },
     {
       icon: 'add_alert',
-      title: 'REMIND',
-      click: ''
+      title: 'REMIND'
     },
     {
       icon: 'article',
-      title: `GENERATE REPORT`,
-      click: ''
+      title: `GENERATE REPORT`
     },
   ]
   constructor() { }
@@ -41,7 +37,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  hai(msg){
+  hai(msg) {
     console.log(msg)
   }
 

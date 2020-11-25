@@ -14,9 +14,8 @@
       <input [(ngModel)]="newAdmin.email" matInput placeholder="Enter Mail ID">
     </mat-form-field>
   </div>
-  <div class="col-2">
-    <button mat-fab (click)="addNewAdminToAdminList()" color="accent" aria-label=""
-      disabled={{disableAdd}}>
+  <div class="col-2 d-flex align-items-center">
+    <button mat-fab (click)="addNewAdminToAdminList()" aria-label="" disabled={{disableAdd}}>
       <mat-icon>add</mat-icon>
     </button>
   </div>

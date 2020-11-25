@@ -1,4 +1,5 @@
 @import 'src/mixins/mixin.scss';
+@import 'src/mixins/variables.scss';
 
 .new-admin {
   border-bottom: 1px dashed gray;
@@ -11,6 +12,7 @@
   @include mat-input-style;
 
   button {
+    background-color: $buttonBackground;
     outline: none;
   }
 }

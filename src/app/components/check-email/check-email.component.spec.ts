@@ -8,9 +8,9 @@ describe('CheckEmailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CheckEmailComponent ]
+      declarations: [CheckEmailComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

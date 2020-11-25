@@ -6,15 +6,17 @@
       </div>
       <div class="col-sm-12 col-md-8 col-lg-9">
         <app-details></app-details>
-          <div *ngIf="clicked" class="nav-options">
-            <button routerLink="/password" mat-stroked-button color="accent">Change Password</button>
-            <button (click)="onClickOpenModal('Admin')" data-toggle="modal" data-target="#adminModal" mat-stroked-button color="accent">Add / Remove Admins</button>
-            <button (click)="onClickOpenModal('Super Admin')" data-toggle="modal" data-target="#adminModal" mat-stroked-button color="accent">Add / Remove Super Admins</button>
-          </div>
-          <button mat-fab (click)="openDialog()" class="warn" color="warn"
-            aria-label="Example icon button with a home icon">
-            <mat-icon>{{clicked ? 'close' : 'add'}}</mat-icon>
-          </button>
+        <div *ngIf="clicked" class="nav-options">
+          <button routerLink="/password" mat-stroked-button color="accent">Change Password</button>
+          <button (click)="onClickOpenModal('Admin')" data-toggle="modal" data-target="#adminModal" mat-stroked-button
+            color="accent">Add / Remove Admins</button>
+          <button (click)="onClickOpenModal('Super Admin')" data-toggle="modal" data-target="#adminModal"
+            mat-stroked-button color="accent">Add / Remove Super Admins</button>
+        </div>
+        <button mat-fab (click)="openDialog()" class="warn" color="warn"
+          aria-label="Example icon button with a home icon">
+          <mat-icon>{{clicked ? 'close' : 'add'}}</mat-icon>
+        </button>
       </div>
     </div>
   </div>

@@ -17,6 +17,12 @@
 
   @include mat-input-style;
 
+  ::ng-deep {
+    .mat-datepicker-toggle .mat-icon-button {
+      outline: none;
+    }
+  }
+
   mat-form-field {
     width: 100%;
     font-size: 1rem;
@@ -25,16 +31,17 @@
 
   .options {
     padding-left: 30px;
-    border-left: 2px solid $accentColor;
+    border-left: 2px solid $buttonBackground;
   }
 
   .pr-30px {
     padding-right: 30px;
   }
 
-  button {
+  .button {
     width: 100%;
-    text-align: start;
+    text-align: left;
+    vertical-align: center;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 1.25px;
@@ -42,6 +49,7 @@
     padding: 12px;
     margin-bottom: 1.25rem;
     outline: none;
+    color: $buttonBackground;
     background: $optionsButtonBackground;
   }
 
@@ -56,10 +64,14 @@
     }
   }
 
-  .calender-icon {
-    color: $accentColor;
+  .icon {
+    color: $buttonBackground;
     position: relative;
-    right: -.5rem;
+    cursor: default;
+  }
+
+  .cal-icon {
+    right: -0.5rem;
   }
 
   @media (max-width: 991px) {

@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClickOpenModal(category){
+  onClickOpenModal(category) {
     this.adminCategory = category;
     this.openDialog();
   }

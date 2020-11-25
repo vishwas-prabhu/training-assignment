@@ -1,12 +1,13 @@
 @import 'src/mixins/variables.scss';
 
 .footer {
-    text-align: center;
-    background-color: $footerBackground;
-    padding: 10px 0px;
-    p {
-        letter-spacing: 0.15px;
-        line-height: 24px;
-        color:$footerTextColor;
-    }
+  text-align: center;
+  background-color: $footerBackground;
+  padding: 10px 0px;
+
+  p {
+    letter-spacing: 0.15px;
+    line-height: 24px;
+    color: $footerTextColor;
+  }
 }

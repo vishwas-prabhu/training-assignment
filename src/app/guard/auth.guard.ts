@@ -7,24 +7,24 @@ import { AuthService } from '../services/auth.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
-  
+  constructor(private authService: AuthService, private router: Router) { }
+
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): true|UrlTree {
-      const url: string = state.url;
-      return this.checkLogin(url);
-    }
-  
-    checkLogin(url: string): true|UrlTree {
+    state: RouterStateSnapshot): true | UrlTree {
+    const url: string = state.url;
+    return this.checkLogin(url);
+  }
 
-      if (this.authService.isUserLoggedIn()) { return true; }
+  checkLogin(url: string): true | UrlTree {
 
-      // Store the attempted URL for redirecting
-      this.authService.redirectUrl = url;
-  
-      // Redirect to the login page
-      return this.router.parseUrl('/login');
-    }
-  
+    if (this.authService.isUserLoggedIn()) { return true; }
+
+    // Store the attempted URL for redirecting
+    this.authService.redirectUrl = url;
+
+    // Redirect to the login page
+    return this.router.parseUrl('/login');
+  }
+
 }
