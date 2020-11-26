@@ -2,7 +2,7 @@
   <div class="row ">
     <div class="col-md-12 col-lg-8 pr-30px">
       <div class="questionaire">
-        <p class="title">Questionaire</p>
+        <p class="title">Questionnaire</p>
         <mat-form-field appearance="outline">
           <mat-label>Enter Title</mat-label>
           <input matInput placeholder="Placeholder" value="Secure Coding Guidelines">
@@ -65,7 +65,7 @@
     <div class="col-md-12 col-lg-4 pl-0">
       <div class="options" *ngFor="let button of buttons">
         <button mat-button class="button">
-          <mat-icon matIcon>{{button.icon}}</mat-icon> {{button.title}}
+          <mat-icon matIcon>{{button.icon}}</mat-icon><span>{{button.title}}</span> 
         </button>
       </div>
     </div>

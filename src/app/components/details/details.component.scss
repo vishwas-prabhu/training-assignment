@@ -40,6 +40,8 @@
 
   .button {
     width: 100%;
+    display: inline-flex;
+    align-items: center;
     text-align: left;
     vertical-align: center;
     font-size: 14px;
@@ -51,6 +53,10 @@
     outline: none;
     color: $buttonBackground;
     background: $optionsButtonBackground;
+
+    span {
+      margin-left: 0.75rem;
+    }
   }
 
   .duration-right-align {
