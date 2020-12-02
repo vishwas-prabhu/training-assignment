@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  acceptPptx: string = ".pptx";
-  acceptXlsx: string = ".xlsx";
+  acceptPptx: string;
+  acceptXlsx: string;
 
   buttons = [
     {
@@ -31,14 +31,16 @@ export class DetailsComponent implements OnInit {
       icon: 'article',
       title: `GENERATE REPORT`
     },
-  ]
-  constructor() { }
+  ];
+  constructor() {
+    this.acceptPptx = '.ppt';
+    this.acceptXlsx = '.xlsx';
+  }
 
   ngOnInit(): void {
   }
 
-  hai(msg) {
-    console.log(msg)
+  hai(msg): void {
+    console.log(msg);
   }
-
 }

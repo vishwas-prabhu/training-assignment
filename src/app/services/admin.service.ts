@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { admin } from '../admin.interface';
+import { Admin } from '../admin.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
 
-  admins: admin[] = [
+  admins: Admin[] = [
     {
       id: 1,
       name: 'Kevin',
@@ -36,33 +36,33 @@ export class AdminService {
       email: 'vishwas2@robosoftin.com',
       type: 'Super Admin'
     }
-  ]
+  ];
 
   constructor() { }
 
-  getAdminList(): Observable<admin[]> {
+  getAdminList(): Observable<Admin[]> {
     return of(this.admins);
   }
 
-  addNewAdminToAdminList(admin) {
+  addNewAdminToAdminList(admin): void {
     this.admins.push(admin);
   }
 
-  updateAdmin({ id, name, employeeNumber, email }) {
+  updateAdmin({ id, name, employeeNumber, email }): void {
     this.admins.find((item) => {
       if (item.id === id) {
         item.name = name;
         item.employeeNumber = employeeNumber;
         item.email = email;
       }
-    })
+    });
   }
 
-  deleteAdmin(id) {
+  deleteAdmin(id): void {
     this.admins.find((item, index) => {
       if (item.id === id) {
         this.admins.splice(index, 1);
       }
-    })
+    });
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { admin } from 'src/app/admin.interface';
+import { Admin } from 'src/app/admin.interface';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -10,11 +10,12 @@ import { AdminService } from 'src/app/services/admin.service';
 export class AdminComponent implements OnInit {
 
   @Input() adminCategory;
-  admins: admin[];
-  newAdmin: admin;
-  disableAdd: boolean = false;
+  admins: Admin[];
+  newAdmin: Admin;
+  disableAdd: boolean;
 
   constructor(public adminService: AdminService) {
+    this.disableAdd = true;
   }
 
   ngOnInit(): void {
@@ -22,32 +23,32 @@ export class AdminComponent implements OnInit {
     this.resetNewAdmin();
   }
 
-  resetNewAdmin() {
+  resetNewAdmin(): void {
     this.newAdmin = {
       id: null,
       name: '',
       employeeNumber: '',
       email: '',
       type: ''
-    }
+    };
     this.disableAdd = false;
   }
 
-  onClickEditDetailsOfAdmin(admin) {
+  onClickEditDetailsOfAdmin(UpdateAdmin): void {
     this.admins.find((item) => {
-      if (item === admin) {
-        this.newAdmin = admin;
+      if (item === UpdateAdmin) {
+        this.newAdmin = UpdateAdmin;
         this.disableAdd = true;
       }
     });
   }
 
-  onClickUpdateAdmin() {
-    this.adminService.updateAdmin({ ...this.newAdmin })
+  onClickUpdateAdmin(): void {
+    this.adminService.updateAdmin({ ...this.newAdmin });
     this.resetNewAdmin();
   }
 
-  onClickDeleteAdmin(id) {
+  onClickDeleteAdmin(id): void {
     this.adminService.deleteAdmin(id);
   }
 }

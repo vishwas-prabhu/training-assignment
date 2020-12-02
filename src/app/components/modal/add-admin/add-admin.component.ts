@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -11,15 +11,17 @@ export class AddAdminComponent implements OnInit {
   @Input() newAdmin;
   @Input() disableAdd;
   @Input() adminCategory;
+  @Output() resetAdmin = new EventEmitter();
 
   constructor(private admin: AdminService) { }
 
   ngOnInit(): void {
   }
 
-  addNewAdminToAdminList() {
+  addNewAdminToAdminList(): void {
     this.newAdmin.id = Math.floor(Math.random() * 10000 + 1);
     this.newAdmin.type = this.adminCategory;
-    this.admin.addNewAdminToAdminList({ ...this.newAdmin })
+    this.admin.addNewAdminToAdminList({ ...this.newAdmin });
+    this.resetAdmin.emit();
   }
 }

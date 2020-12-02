@@ -12,7 +12,7 @@ export class CheckEmailComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goBack() {
+  goBack(): void {
     this.location.back();
   }
 }

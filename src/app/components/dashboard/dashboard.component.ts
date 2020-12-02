@@ -26,18 +26,18 @@ export class DashboardComponent implements OnInit {
       title: 'Process Guidelines',
       selected: false
     }
-  ]
+  ];
 
   ngOnInit(): void {
   }
 
-  select(list) {
+  select(list): void {
     this.lists.find((item) => {
-      if (item == list) {
+      if (item === list) {
         item.selected = true;
+      } else {
+        item.selected = false;
       }
-      else item.selected = false
-    })
+    });
   }
-
 }

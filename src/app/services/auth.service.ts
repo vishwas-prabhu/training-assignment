@@ -7,8 +7,8 @@ import { tap, delay } from 'rxjs/operators';
 })
 export class AuthService {
 
-  isLoggedIn: boolean = false;
-  username: string = '';
+  isLoggedIn = false;
+  username = '';
   redirectUrl: string;
 
 
@@ -42,7 +42,7 @@ export class AuthService {
         this.isLoggedIn = true;
         return true;
       }
-    })
+    });
 
     if (!this.isLoggedIn) {
       alert('wrong username or password');
@@ -51,7 +51,7 @@ export class AuthService {
   }
 
   updatePassword(newPassword): void {
-    const USERS = this.getUsers()
+    const USERS = this.getUsers();
     USERS.find((item) => {
       if (item.username === this.username) {
         item.password = newPassword;

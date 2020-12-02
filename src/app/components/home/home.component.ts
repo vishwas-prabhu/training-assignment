@@ -15,12 +15,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClickOpenModal(category) {
+  onClickOpenModal(category): void {
     this.adminCategory = category;
     this.openDialog();
   }
 
-  openDialog() {
+  openDialog(): void {
     this.clicked = !this.clicked;
   }
 }

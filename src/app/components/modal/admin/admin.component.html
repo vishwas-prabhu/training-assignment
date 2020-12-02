@@ -6,7 +6,7 @@
           Add / Remove {{adminCategory}}s
         </p>
 
-        <app-add-admin [newAdmin]="newAdmin" [adminCategory]="adminCategory" [disableAdd]="disableAdd"></app-add-admin>
+        <app-add-admin [newAdmin]="newAdmin" [adminCategory]="adminCategory" [disableAdd]="disableAdd" (resetAdmin)="resetNewAdmin()"></app-add-admin>
 
         <div class="m-0 p-0" *ngFor="let admin of admins">
           <div *ngIf="adminCategory == admin.type" class="row pt-md-4">

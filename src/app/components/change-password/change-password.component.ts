@@ -9,16 +9,19 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  reEnterNewPassword: string = '';
-  newPassword: string = '';
-  disabledButton: boolean = true;
+  reEnterNewPassword: string;
+  newPassword: string;
+  disabledButton: boolean;
 
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    this.reEnterNewPassword = '';
+    this.newPassword = '';
+    this.disabledButton = true;
   }
 
-  validate() {
+  validate(): void {
     if (this.reEnterNewPassword !== this.newPassword || this.newPassword.length < 5) {
       this.disabledButton = true;
     } else {
@@ -26,7 +29,7 @@ export class ChangePasswordComponent implements OnInit {
     }
   }
 
-  onClickUpdatePassword() {
+  onClickUpdatePassword(): void {
     this.router.navigate(['/home']);
     this.authService.updatePassword(this.newPassword);
   }
