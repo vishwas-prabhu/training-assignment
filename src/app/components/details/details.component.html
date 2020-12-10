@@ -30,19 +30,19 @@
         <p class="title">Additional Details</p>
         <mat-form-field class="col-4 pl-0" appearance="outline">
           <mat-label>Start Date</mat-label>
-          <input matInput [matDatepicker]="picker1">
+          <input matInput [ngModel]="dateStart" (ngModelChange)="setEndDate($event)" [min]="minStartDate" [matDatepicker]="picker1">
           <mat-datepicker-toggle class="icon cal-icon" matSuffix [for]="picker1"></mat-datepicker-toggle>
-          <mat-datepicker #picker1></mat-datepicker>
+          <mat-datepicker #picker1 ></mat-datepicker>
         </mat-form-field>
         <mat-form-field class="col-4 p-0" appearance="outline">
           <mat-label>End date</mat-label>
-          <input matInput [matDatepicker]="picker2">
+          <input matInput [(ngModel)]="dateEnd" [matDatepicker]="picker2" [min]="minEndDate">
           <mat-datepicker-toggle class="icon cal-icon" matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
         <mat-form-field class="col-4 pr-0 duration-right-align" appearance="outline">
           <mat-label>Duration</mat-label>
-          <input matInput type="text" value="5">
+          <input matInput type="number" [min]="0" [max]="10">
           <span class="suffix">Days</span>
         </mat-form-field>
         <mat-form-field class="col-6 pl-0" appearance="outline">

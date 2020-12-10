@@ -2,7 +2,12 @@
 
 .modal-content {
   border-radius: 20px;
+  border: none;
   padding: 0px 3rem;
+  max-height: 80vh;
+  overflow: hidden auto;
+
+
 
   @include mat-input-style;
 
@@ -43,7 +48,24 @@ mat-form-field {
 }
 
 
-
 .button {
   @include custom-button(0.75rem);
 }
+
+// ::-webkit-scrollbar{
+//   width: 8px;
+// }
+
+// ::-webkit-scrollbar-track {
+//   margin: 10px;
+//   background-color: transparent;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background-color: darkblue;
+//   border-radius: 4px;
+// }
+
+// ::-webkit-scrollbar-button {
+// display: none;
+// }

@@ -9,6 +9,10 @@ export class DetailsComponent implements OnInit {
 
   acceptPptx: string;
   acceptXlsx: string;
+  dateStart: Date;
+  dateEnd: Date;
+  minStartDate;
+  minEndDate;
 
   buttons = [
     {
@@ -38,6 +42,13 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.minStartDate = new Date(Date.now());
+    this.minEndDate = new Date(Date.now());
+  }
+
+  setEndDate(date: Date): void {
+    this.dateEnd = date;
+    this.minEndDate = date;
   }
 
   hai(msg): void {
